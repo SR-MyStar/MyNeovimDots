@@ -11,9 +11,9 @@ return {
   end,
   opts = function()
     return {
-      separator = " ",
+      separator = " |> ",
       highlight = true,
-      depth_limit = 10,
+      depth_limit = 15,
       icons = require("lazyvim.config").icons.kinds,
     }
   end,

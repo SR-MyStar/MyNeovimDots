@@ -11,6 +11,14 @@ return {
       close_command = function(n) require("mini.bufremove").delete(n, false) end,
       -- stylua: ignore
       right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
+      -----------------------------------------
+      indicator = {
+        icon = "▎",
+        style = "icon",
+      },
+      color_icons = false,
+      separator_style = "slant",
+      -----------------------------------------
       diagnostics = "nvim_lsp",
       always_show_bufferline = true,
       diagnostics_indicator = function(_, _, diag)
@@ -21,6 +29,10 @@ return {
           .. (diag.hint and icons.Hint .. diag.hint or "")
         return vim.trim(ret)
       end,
+      disabled_filetypes = {
+        "dashboard",
+        "alpha",
+      },
       offsets = {
         {
           filetype = "neo-tree",

@@ -31,7 +31,7 @@ return {
       -- like `size`, width and height can be a number or function which is passed the current terminal
     },
     winbar = {
-      enabled = false,
+      enabled = true,
       name_formatter = function(term) --  term: Terminal
         return term.name
       end,

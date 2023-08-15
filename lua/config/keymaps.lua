@@ -17,13 +17,14 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 end
-
 -- normal
 map("n", "<C-/>", "<cmd>ToggleTerm direction=horizontal size=12 dir=.<CR>", { desc = "Open Terminal" })
-map("t", "<C-/>", "<cmd>close<CR>", { desc = "Hide Terminal" })
 
 map("n", "<leader>uh", "<cmd>nohl<CR>", { desc = "Clear highlight" })
 
 -- visual
 
 -- insert
+
+-- terminal
+map("t", "<C-/>", "<cmd>close<CR>", { desc = "Hide Terminal" })
