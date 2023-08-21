@@ -12,7 +12,7 @@ return {
         always_show_tabs = true,
         disabled_filetypes = {
           statusline = { "dashboard", "alpha" },
-          winbar = { "dashboard", "alpha" },
+          winbar = { "dashboard", "alpha", "neo-tree" },
           tab = { "dashboard", "alpha" },
         },
       },
@@ -80,6 +80,14 @@ return {
         lualine_a = {},
         lualine_b = {},
         lualine_c = {
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+          {
+            function()
+              return "=>"
+            end,
+            color = { fg = "#C8D3F5" },
+            separator = "",
+          },
           {
             function()
               return require("nvim-navic").get_location()
@@ -87,6 +95,7 @@ return {
             cond = function()
               return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
             end,
+            padding = { left = 0, right = 0 },
           },
         },
         lualine_x = {

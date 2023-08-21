@@ -8,7 +8,8 @@ return {
     labels = "asdfghjklqwertyuiop",
   },
   vim.api.nvim_command("highlight FlashMatch guifg=#FFFFFF guibg=none cterm=bold"),
-  vim.api.nvim_command("highlight FlashCurrent guifg=#000000 guibg=#FF007C cterm=bold"),
+  vim.api.nvim_command("highlight FlashCurrent guifg=#000000 guibg=#FFFFFF cterm=bold"),
+  vim.api.nvim_command("highlight FlashLabel guifg=#000000 cterm=bold"),
 
   -- stylua: ignore
   keys = {

@@ -12,10 +12,7 @@ return {
       -- stylua: ignore
       right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
       -----------------------------------------
-      indicator = {
-        icon = "▎",
-        style = "icon",
-      },
+      indicator = { style = "underline" },
       color_icons = false,
       separator_style = "slant",
       -----------------------------------------
