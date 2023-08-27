@@ -6,6 +6,7 @@ return {
       blank = { enable = false },
       indent = { enable = false },
       chunk = {
+        enable = false,
         chars = {
           horizontal_line = "─",
           vertical_line = "│",
