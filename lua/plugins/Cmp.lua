@@ -1,3 +1,16 @@
+local function border(hl_name)
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name },
+  }
+end
+
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
@@ -26,7 +39,6 @@ return {
     }
     vim.opt.pumheight = 14
     opts.window.completion.scrollbar = false
-    opts.window.completion.winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None"
     opts.window.completion.col_offset = -3
     opts.window.completion.side_padding = 0
     opts.window.completion.max_width = 25
@@ -37,31 +49,41 @@ return {
         local kind = require("lspkind").cmp_format({
           mode = "symbol_text",
           symbol_map = {
-            Text = "󰈚",
+            Array = "",
+            Boolean = "",
+            Color = "",
+            Copilot = "",
+            Field = "",
+            Key = "",
+            Namespace = "",
+            Null = "",
+            Number = "",
+            Object = "",
+            Package = "",
+            Snippet = "",
+            String = "",
+            Text = "󰧭",
+            Unit = "󰑭",
             Method = "󰆧",
             Function = "󰡱",
-            Constructor = "󰒔",
-            Field = "󰇽",
+            Constructor = "",
             Variable = "󰂡",
             Class = "󰠱",
             Interface = "",
-            Module = "",
+            Module = "󰏗",
             Property = "󰜢",
-            Unit = "",
             Value = "󰎠",
             Enum = "",
             Keyword = "󰌋",
-            Snippet = "󰅱",
-            Color = "󰏘",
-            File = "󰈙",
-            Reference = "󱅷",
-            Folder = "󰉋",
+            File = "󰧮",
+            Reference = "",
+            Folder = "",
             EnumMember = "",
-            Constant = "󰐀",
+            Constant = "󰏿",
             Struct = "",
             Event = "",
-            Operator = "󰆖",
-            TypeParameter = "󱃗",
+            Operator = "󰆕",
+            TypeParameter = "󰅲",
           },
           maxwidth = 25,
         })(entry, vim_item)

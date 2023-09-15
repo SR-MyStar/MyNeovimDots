@@ -7,7 +7,7 @@ return {
 
     return {
       options = {
-        theme = "auto",
+        theme = "catppuccin",
         globalstatus = true,
         always_show_tabs = true,
         disabled_filetypes = {

@@ -1,6 +1,7 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+
 -- This file is automatically loaded by lazyvim.config.init
 local Util = require("lazyvim.util")
 
@@ -17,14 +18,17 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 end
--- normal
-map("n", "<C-/>", "<cmd>ToggleTerm direction=horizontal size=12 dir=.<CR>", { desc = "Open Terminal" })
 
+local function del(modes, lhs, opts)
+  local keys = require("lazy.core.handler").handlers.keys
+  ---@cast keys LazyKeysHandler
+  -- do not create the keymap if a lazy keys handler exists
+  vim.keymap.del(modes, lhs, opts)
+end
+
+-- Clear highlight
 map("n", "<leader>uh", "<cmd>nohl<CR>", { desc = "Clear highlight" })
 
--- visual
-
--- insert
-
--- terminal
+-- Open/Hide terminal
+map("n", "<C-/>", "<cmd>ToggleTerm direction=horizontal size=12 dir=.<CR>", { desc = "Open Terminal" })
 map("t", "<C-/>", "<cmd>close<CR>", { desc = "Hide Terminal" })
