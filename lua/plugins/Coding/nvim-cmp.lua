@@ -1,26 +1,13 @@
-local function border(hl_name)
-  return {
-    { "╭", hl_name },
-    { "─", hl_name },
-    { "╮", hl_name },
-    { "│", hl_name },
-    { "╯", hl_name },
-    { "─", hl_name },
-    { "╰", hl_name },
-    { "│", hl_name },
-  }
-end
-
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    "hrsh7th/cmp-emoji",
-    "onsails/lspkind-nvim",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
-    "saadparwaiz1/cmp_luasnip",
+    "hrsh7th/cmp-emoji",
+    "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-nvim-lsp",
+    "onsails/lspkind-nvim",
+    "saadparwaiz1/cmp_luasnip",
     "hrsh7th/cmp-nvim-lsp-signature-help",
   },
   ---@param opts cmp.ConfigSchema
@@ -48,43 +35,7 @@ return {
       format = function(entry, vim_item)
         local kind = require("lspkind").cmp_format({
           mode = "symbol_text",
-          symbol_map = {
-            Array = "",
-            Boolean = "",
-            Color = "",
-            Copilot = "",
-            Field = "",
-            Key = "",
-            Namespace = "",
-            Null = "",
-            Number = "",
-            Object = "",
-            Package = "",
-            Snippet = "",
-            String = "",
-            Text = "󰧭",
-            Unit = "󰑭",
-            Method = "󰆧",
-            Function = "󰡱",
-            Constructor = "",
-            Variable = "󰂡",
-            Class = "󰠱",
-            Interface = "",
-            Module = "󰏗",
-            Property = "󰜢",
-            Value = "󰎠",
-            Enum = "",
-            Keyword = "󰌋",
-            File = "󰧮",
-            Reference = "",
-            Folder = "",
-            EnumMember = "",
-            Constant = "󰏿",
-            Struct = "",
-            Event = "",
-            Operator = "󰆕",
-            TypeParameter = "󰅲",
-          },
+          symbol_map = require("models.ICONS").kinds,
           maxwidth = 25,
         })(entry, vim_item)
         local strings = vim.split(kind.kind, "%s", { trimempty = true })

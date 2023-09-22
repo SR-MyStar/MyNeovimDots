@@ -55,7 +55,7 @@ return {
         style = "nvchad",
       },
       navic = {
-        enabled = false,
+        enabled = true,
         custom_bg = "NONE", -- "lualine" will set background to mantle
       },
       native_lsp = {

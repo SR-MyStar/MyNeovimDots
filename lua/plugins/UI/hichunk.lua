@@ -37,10 +37,10 @@ return {
           better_term = true,
           fugitiveblame = true,
         },
-        style = "#65BCFF",
+        style = "#CDD6F4",
       },
       line_num = {
-        style = "#65BCFF",
+        style = "#CDD6F4",
         exclude_filetypes = {
           aerial = true,
           dashboard = true,
