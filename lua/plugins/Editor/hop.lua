@@ -3,7 +3,7 @@ return {
   branch = "v2.0",
   config = function()
     require("hop").setup({ keys = "asdfghjkl" })
-    -- vim.api.nvim_command("highlight HopUnmatched guifg=none guibg=none guisp=none ctermfg=none")
+    vim.api.nvim_command("highlight HopUnmatched guifg=none guibg=none guisp=none ctermfg=none")
     -- vim.api.nvim_command("highlight HopNextKey guifg=#ffffff cterm=bold")
     -- vim.api.nvim_command("highlight HopNextKey1 guifg=#ffffff cterm=bold")
     -- vim.api.nvim_command("highlight HopNextKey2 guifg=#ffffff cterm=bold")
