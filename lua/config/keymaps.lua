@@ -3,9 +3,7 @@
 -- Add any additional keymaps here
 
 -- This file is automatically loaded by lazyvim.config.init
-local Util = require("lazyvim.util")
-
-local function map(mode, lhs, rhs, opts)
+local function del(mode, lhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
   -- do not create the keymap if a lazy keys handler exists
@@ -15,20 +13,6 @@ local function map(mode, lhs, rhs, opts)
     if opts.remap and not vim.g.vscode then
       opts.remap = nil
     end
-    vim.keymap.set(mode, lhs, rhs, opts)
+    vim.keymap.del(mode, lhs, opts)
   end
 end
-
-local function del(modes, lhs, opts)
-  local keys = require("lazy.core.handler").handlers.keys
-  ---@cast keys LazyKeysHandler
-  -- do not create the keymap if a lazy keys handler exists
-  vim.keymap.del(modes, lhs, opts)
-end
-
--- Clear highlight
-map("n", "<leader>uh", "<cmd>nohl<CR>", { desc = "Clear highlight" })
-
--- Open/Hide terminal
-map("n", "<C-/>", "<cmd>ToggleTerm direction=horizontal size=12 dir=.<CR>", { desc = "Open Terminal" })
-map("t", "<C-/>", "<cmd>close<CR>", { desc = "Hide Terminal" })

@@ -1,3 +1,10 @@
 {
-    "completion.autoRequire": false
+    "completion.autoRequire": false,
+    "diagnostics.globals": [
+        "loc"
+    ],
+    "diagnostics.disable": [
+        "undefined-global",
+        "unused-local"
+    ]
 }

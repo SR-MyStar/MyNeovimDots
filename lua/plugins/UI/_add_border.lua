@@ -7,16 +7,14 @@ PLUGINS.cmp = {
   "nvim-cmp",
   opts = function(_, opts)
     local bordered = require("cmp.config.window").bordered
-    return vim.tbl_deep_extend("force", opts, {
-      window = {
-        completion = bordered(BORDER),
-        documentation = bordered(BORDER),
-      },
-    })
+    opts.window = {
+      completion = bordered(BORDER),
+      documentation = bordered(BORDER),
+    }
   end,
 }
 
-PLUGINS.whichKey = {
+PLUGINS.which_key = {
   "which-key.nvim",
   opts = {
     window = { border = BORDER },
@@ -30,7 +28,7 @@ PLUGINS.gitsigns = {
   },
 }
 
-PLUGINS.nvimLsponfig = {
+PLUGINS.nvim_lsponfig = {
   "nvim-lspconfig",
   opts = function(_, opts)
     -- Set LspInfo border
@@ -39,8 +37,8 @@ PLUGINS.nvimLsponfig = {
   end,
 }
 
-PLUGINS.nullLs = {
-  "null-ls.nvim",
+PLUGINS.none_ls = {
+  "none-ls.nvim",
   opts = { border = BORDER },
 }
 
@@ -58,12 +56,27 @@ PLUGINS.noice = {
   },
 }
 
+PLUGINS.dropbar = {
+  "Bekaboo/dropbar.nvim",
+  opts = function(_, opts)
+    require("dropbar").setup({
+      menu = {
+        win_configs = {
+          border = BORDER,
+        },
+      },
+    })
+    return opts
+  end,
+}
+
 return {
   PLUGINS.cmp,
-  PLUGINS.whichKey,
+  PLUGINS.which_key,
   PLUGINS.gitsigns,
-  PLUGINS.nvimLsponfig,
-  PLUGINS.nullLs,
+  PLUGINS.nvim_lsponfig,
+  -- PLUGINS.none_ls,
   PLUGINS.mason,
   PLUGINS.noice,
+  PLUGINS.dropbar,
 }

@@ -2,8 +2,6 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
-vim.o.mouse = ""
-
 vim.g.terminal_color_0 = "#45475A"
 vim.g.terminal_color_1 = "#F38BA8"
 vim.g.terminal_color_2 = "#A6E3A1"
@@ -21,3 +19,10 @@ vim.g.terminal_color_12 = "#89B4FA"
 vim.g.terminal_color_13 = "#F5C2E7"
 vim.g.terminal_color_14 = "#94E2D5"
 vim.g.terminal_color_15 = "#A6ADC8"
+
+vim.opt.smarttab = false
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+
+vim.opt.autochdir = false

@@ -20,11 +20,13 @@ return {
 
     local luasnip = require("luasnip")
     local cmp = require("cmp")
+    vim.opt.pumblend = 0
+    opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
     opts.window = {
       completion = cmp.config.window.bordered(),
       documentation = cmp.config.window.bordered(),
     }
-    vim.opt.pumheight = 14
+    vim.opt.pumheight = 15
     opts.window.completion.scrollbar = false
     opts.window.completion.col_offset = -3
     opts.window.completion.side_padding = 0
@@ -35,8 +37,8 @@ return {
       format = function(entry, vim_item)
         local kind = require("lspkind").cmp_format({
           mode = "symbol_text",
-          symbol_map = require("models.ICONS").kinds,
-          maxwidth = 25,
+          symbol_map = require("models.ICONS").kindsNoLastSpace,
+          maxwidth = 50,
         })(entry, vim_item)
         local strings = vim.split(kind.kind, "%s", { trimempty = true })
         kind.kind = " " .. (strings[1] or "") .. " "

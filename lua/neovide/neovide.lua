@@ -1,5 +1,3 @@
--- 鼠标
-vim.o.mouse = "a"
 -- -- 行间距
 -- vim.opt.linespace = 2
 -- -- 缩放
@@ -18,7 +16,7 @@ vim.g.neovide_fullscreen = false
 -- 记住以前窗口的大小
 vim.g.neovide_remember_window_size = true
 -- 使用super键位,比如<cmd>
--- vim.g.neovide_input_use_logo = true
+vim.g.neovide_input_use_logo = true
 -- 开启Alt和Meta按键
 vim.g.neovide_input_macos_alt_is_meta = true
 -- 触控板死亡地带

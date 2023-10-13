@@ -1,3 +1,5 @@
+local mocha = require("catppuccin.palettes").get_palette("mocha")
+
 return {
   "akinsho/bufferline.nvim",
   after = "catppuccin",
@@ -7,12 +9,24 @@ return {
     { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
   },
   opts = {
-    highlights = require("catppuccin.groups.integrations.bufferline").get(),
+    highlights = require("catppuccin.groups.integrations.bufferline").get({
+      styles = { "italic", "bold" },
+      custom = {
+        all = {
+          fill = { fg = mocha.base, bg = mocha.base },
+          separator = { fg = mocha.base, bg = mocha.mantle },
+          separator_visible = { fg = mocha.base, bg = mocha.mantle },
+          separator_selected = { fg = mocha.base, bg = mocha.base },
+          tab_selected = { bg = mocha.base },
+          buffer_selected = { bg = mocha.base },
+        },
+      },
+    }),
     options = {
-      -- stylua: ignore
-      close_command = function(n) require("mini.bufremove").delete(n, false) end,
-      -- stylua: ignore
-      right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
+    -- stylua: ignore
+    close_command = function(n) require("mini.bufremove").delete(n, false) end,
+    -- stylua: ignore
+    right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
       -----------------------------------------
       indicator = { style = "underline" },
       color_icons = false,
