@@ -1,15 +1,15 @@
 return {
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  view = "cmdline_popup",
-  opts = {
-    presets = {
-      bottom_search = false,
-      command_palette = true,
-      long_message_to_split = true,
-      inc_rename = true,
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    view = "cmdline_popup",
+    opts = {
+        presets = {
+            bottom_search = false,
+            command_palette = true,
+            long_message_to_split = true,
+            inc_rename = true,
+        },
     },
-  },
   -- stylua: ignore
   keys = {
     { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },

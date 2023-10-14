@@ -1,3 +1,3 @@
 return {
-  require("models.Lualine.Tabline.Lualine_c.diagnostics"),
+    require("models.Lualine.Tabline.Lualine_c.diagnostics"),
 }

@@ -1,4 +1,4 @@
 return {
-  "tabs",
-  use_mode_colors = true,
+    "tabs",
+    use_mode_colors = true,
 }

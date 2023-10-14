@@ -1,11 +1,8 @@
 return {
-  "folke/edgy.nvim",
-  event = "VeryLazy",
-  opts = function(_, opts)
-    require("edgy").setup({
-      right = opts.left,
-    })
-    opts.left = {}
-    return opts
-  end,
+    "folke/edgy.nvim",
+    event = "VeryLazy",
+    opts = function(_, opts)
+        opts.right, opts.left = opts.left, opts.right
+        return opts
+    end,
 }

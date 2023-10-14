@@ -1,3 +1,3 @@
 return {
-  require("models.Lualine.Tabline.Lualine_z.tabs"),
+    require("models.Lualine.Tabline.Lualine_z.tabs"),
 }
