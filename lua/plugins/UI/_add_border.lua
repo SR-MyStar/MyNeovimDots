@@ -11,6 +11,7 @@ PLUGINS.cmp = {
             completion = bordered(BORDER),
             documentation = bordered(BORDER),
         }
+        opts.window.completion.scrollbar = false
     end,
 }
 
@@ -71,7 +72,7 @@ PLUGINS.dropbar = {
 }
 
 return {
-    PLUGINS.cmp,
+    -- PLUGINS.cmp,
     PLUGINS.which_key,
     PLUGINS.gitsigns,
     PLUGINS.nvim_lsponfig,

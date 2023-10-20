@@ -5,14 +5,10 @@ TELESCOPE.keymap = {
     "nvim-telescope/telescope.nvim",
     keys = function(_, keys)
         vim.list_extend(keys, {
-            {
-                "<leader>fi",
-                function()
-                    require("telescope.builtin").builtin()
-                end,
-                desc = "Find Builtin",
-            },
+            -- stylua: ignore start
+            { "<leader>fi", function() require("telescope.builtin").builtin() end, desc = "Find Builtin", },
             { "<leader>i", "<leader>fi", desc = "Find Builtin", remap = true },
+            -- stylua: ignore end
         })
     end,
 }
@@ -123,9 +119,15 @@ TELESCOPE.file_browser = {
         })
         require("telescope").load_extension("file_browser")
     end,
-    -- stylua: ignore
     keys = {
-        { "<leader>fd", function() require("telescope").extensions.file_browser.file_browser({ path = require("lazyvim.util").get_root() }) end, desc = "File Browser (root dir)" },
+        {
+            "<leader>fd",
+            function()
+                require("telescope").extensions.file_browser.file_browser({ path = require("lazyvim.util").root.get() })
+            end,
+            desc = "File Browser (root dir)",
+        },
+        -- stylua: ignore
         { "<leader>fD", function() require("telescope").extensions.file_browser.file_browser({ path = vim.loop.cwd() }) end, desc = "File Browser (cwd)" },
     },
 }

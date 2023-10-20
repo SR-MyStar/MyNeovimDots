@@ -1,8 +1,7 @@
 return {
     "neovim/nvim-lspconfig",
-    opts = {
-        inlay_hints = {
-            enabled = true,
-        },
-    },
+    opts = function(_, opts)
+        opts.inlay_hints.enabled = true
+        return opts
+    end,
 }

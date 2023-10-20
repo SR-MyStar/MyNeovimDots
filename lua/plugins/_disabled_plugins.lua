@@ -1,3 +1,5 @@
-local PLUGINS = {}
+local DISABLED_PLUGINS = {
+    { "nvim-treesitter/nvim-treesitter-context", enabled = false },
+}
 
-return {}
+return DISABLED_PLUGINS

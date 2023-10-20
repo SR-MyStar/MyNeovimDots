@@ -36,14 +36,6 @@ local function custom_highlights(C)
         CmpItemKindTypeParameter = { fg = C.base, bg = C.blue },
         CmpItemKindCopilot = { fg = C.base, bg = C.teal },
 
-        DashboardShortCut = { fg = C.pink },
-        DashboardHeader = { fg = C.blue },
-        DashboardCenter = { fg = C.green },
-        DashboardFooter = { fg = C.yellow, style = { "italic" } },
-        DashboardMruTitle = { fg = C.sky },
-        DashboardProjectTitle = { fg = C.sky },
-        DashboardFiles = { fg = C.lavender },
-
         FlashBackdrop = { fg = C.overlay0 },
         FlashLabel = { fg = C.base, bg = C.green, style = { "bold" } },
         FlashMatch = { fg = C.base, bg = C.lavender },
