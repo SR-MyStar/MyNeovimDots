@@ -1,7 +1,9 @@
 return {
     "LazyVim/LazyVim",
-    -- { import = "plugins.Extras.Alpha._load"}, -- Alpha-nvim
-    -- { import = "plugins.Extras.None-ls._load" }, -- None-ls
-    { import = "plugins.Extras.Clangd._load" }, -- Clangd
-    { import = "plugins.Extras.Edgy._load" }, -- Edgy
+    { import = "plugins.Extras.Dot._load" },
+    { import = "plugins.Extras.Edgy._load" },
+    -- { import = "plugins.Extras.Alpha._load"},
+    { import = "plugins.Extras.Clangd._load" },
+    { import = "plugins.Extras.Python._load" },
+    -- { import = "plugins.Extras.None-ls._load" },
 }
