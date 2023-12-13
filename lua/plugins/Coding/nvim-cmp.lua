@@ -44,7 +44,7 @@ return {
                 })(entry, vim_item)
                 local strings = vim.split(kind.kind, "%s", { trimempty = true })
                 kind.kind = " " .. (strings[1] or "") .. " "
-                kind.menu = "    (" .. (strings[2] or "") .. ")"
+                kind.menu = "    [" .. (strings[2] or "") .. "]"
 
                 return kind
             end,
@@ -74,7 +74,7 @@ return {
                     fallback()
                 end
             end, { "i", "s" }),
-            ["<C-g>"] = cmp.mapping(function()
+            ["<A-TAB>"] = cmp.mapping(function()
                 if cmp.visible() then
                     cmp.close()
                 else

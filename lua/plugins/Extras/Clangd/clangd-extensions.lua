@@ -3,7 +3,7 @@ return {
     lazy = true,
     config = function() end,
     opts = function(_, opts)
-        opts.inlay_hints.inline = 1
+        opts.inlay_hints.inline = true
         -- Options other than `highlight' and `priority' only work
         -- if `inline' is disabled
         -- Only show inlay hints for the current line
