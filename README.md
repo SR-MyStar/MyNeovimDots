@@ -1,5 +1,6 @@
-# Tree
-
+![231224_07h42m10s_screenshot](https://github.com/SR-MyStar/MyNeovimDots/assets/139795416/4cc0a02c-9d84-47ee-a3d0-d320c3a4db53)
+![231224_07h42m48s_screenshot](https://github.com/SR-MyStar/MyNeovimDots/assets/139795416/851f8c8e-ec93-465c-976a-c3ff0aeae134)
+# File Tree
 ```
 .
 ├── .gitignore
