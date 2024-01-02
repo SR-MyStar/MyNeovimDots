@@ -1,5 +1,6 @@
 return {
     "folke/todo-comments.nvim",
+    lazy = true,
     cmd = { "TodoTrouble", "TodoTelescope" },
     event = { "BufReadPost", "BufNewFile" },
     config = true,
@@ -19,9 +20,9 @@ return {
             TEST = { icon = " ", color = "test", alt = { "DEBUG", "TESTING", "PASSED", "FAILED" } },
         },
     },
-  -- stylua: ignore
-  keys = {
-    { "<leader>st", "<cmd>TodoTelescope prompt_prefix=\\ \\ <cr>", desc = "Todo" },
-    { "<leader>sT", "<cmd>TodoTelescope prompt_prefix=\\ \\  keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
-  },
+    -- stylua: ignore
+    keys = {
+        { "<leader>st", "<cmd>TodoTelescope prompt_prefix=\\ \\ <cr>", desc = "Todo" },
+        { "<leader>sT", "<cmd>TodoTelescope prompt_prefix=\\ \\  keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
+    },
 }

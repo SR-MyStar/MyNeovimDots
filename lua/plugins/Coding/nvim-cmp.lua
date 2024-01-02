@@ -1,3 +1,5 @@
+local ICONS = require(require("_env").fm_ICONS)
+
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -8,7 +10,8 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "onsails/lspkind-nvim",
         "saadparwaiz1/cmp_luasnip",
-        "hrsh7th/cmp-nvim-lsp-signature-help",
+        "chrisgrieser/cmp-nerdfont",
+        "kdheepak/cmp-latex-symbols",
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
@@ -22,7 +25,11 @@ return {
         local cmp = require("cmp")
 
         vim.opt.pumblend = 0
-        opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
+        opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
+            { name = "emoji" },
+            { name = "nerdfont",      priority = -90 },
+            { name = "latex_symbols", option = { strategy = 0 } },
+        }))
         opts.window = {
             completion = cmp.config.window,
             documentation = cmp.config.window,
@@ -39,18 +46,37 @@ return {
             format = function(entry, vim_item)
                 local kind = require("lspkind").cmp_format({
                     mode = "symbol_text",
-                    symbol_map = require("models.ICONS").kindsNoLastSpace,
+                    symbol_map = ICONS.kindsNoLastSpace,
                     maxwidth = 50,
                 })(entry, vim_item)
-                local strings = vim.split(kind.kind, "%s", { trimempty = true })
-                kind.kind = " " .. (strings[1] or "") .. " "
-                kind.menu = "    [" .. (strings[2] or "") .. "]"
+                if entry.source.name == "emoji" then
+                    kind.kind = ICONS.kindsNoLastSpace.Emoji
+                    kind.menu = "Emoji"
+                    vim_item.kind_hl_group = "CmpItemKindEmoji"
+                elseif entry.source.name == "nerdfont" then
+                    kind.kind = ICONS.kindsNoLastSpace.NerdFont
+                    kind.menu = "NerdFont"
+                    vim_item.kind_hl_group = "CmpItemKindNerdFont"
+                else
+                    local strings = vim.split(kind.kind, "%s", { trimempty = true })
+                    kind.kind = (strings[1] or "")
+                    kind.menu = (strings[2] or "")
+                end
+                kind.kind = " " .. kind.kind .. " "
+                kind.menu = "    [" .. kind.menu .. "]"
 
                 return kind
             end,
         }
 
         opts.mapping = vim.tbl_extend("force", opts.mapping, {
+            ["<CR>"] = cmp.mapping(function(fallback)
+                if cmp.visible() and cmp.get_active_entry() then
+                    cmp.confirm({ select = true })
+                else
+                    fallback()
+                end
+            end, { "i", "c" }),
             ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior

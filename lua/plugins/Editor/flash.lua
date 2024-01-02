@@ -63,6 +63,7 @@ keymaps.Jump_To_A_Line = {
 
 return {
     "folke/flash.nvim",
+    lazy = true,
     event = "VeryLazy",
     vscode = true,
     ---@type Flash.Config

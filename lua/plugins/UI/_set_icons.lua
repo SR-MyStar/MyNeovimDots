@@ -1,4 +1,4 @@
-local ICONS = require("models.ICONS")
+local ICONS = require(require("_env").fm_ICONS)
 
 return {
     "LazyVim/LazyVim",

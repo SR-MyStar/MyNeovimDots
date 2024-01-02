@@ -34,7 +34,6 @@ PLUGINS.nvim_lsponfig = {
     opts = function(_, opts)
         -- Set LspInfo border
         require("lspconfig.ui.windows").default_options.border = BORDER
-        return opts
     end,
 }
 
@@ -67,7 +66,6 @@ PLUGINS.dropbar = {
                 },
             },
         })
-        return opts
     end,
 }
 

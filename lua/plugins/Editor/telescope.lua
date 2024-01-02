@@ -1,8 +1,10 @@
-local ICONS = require("models.ICONS")
+local ICONS = require(require("_env").fm_ICONS)
 local TELESCOPE = {}
 
 TELESCOPE.option = {
     "nvim-telescope/telescope.nvim",
+    lazy = true,
+    event = "VeryLazy",
     opts = {
         defaults = {
             mappings = {
@@ -31,7 +33,7 @@ TELESCOPE.option = {
         pickers = ICONS.Telescope,
     },
     keys = function(_, keys)
-        vim.list_extend(keys, {
+        keys = vim.list_extend(keys, {
             { "<leader>fi", function() require("telescope.builtin").builtin() end, desc = "Find Builtin", },
             { "<leader>i",  "<leader>fi",                                          desc = "Find Builtin", remap = true },
         })

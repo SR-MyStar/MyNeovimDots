@@ -23,8 +23,5 @@ return {
             ["gs"] = { name = "+Mini surround" },
             ["m"] = { name = "+surround" },
         }, { mode = "n" })
-        wk.register({
-            ["<C-g>"] = { name = "+surround" },
-        }, { mode = "i" })
     end,
 }
