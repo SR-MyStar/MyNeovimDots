@@ -9,6 +9,13 @@ return function()
                 buffer = true,
                 desc = "Run rust file",
             })
+            -- vim.keymap.set("n", "<leader>cc", function()
+            --     vim.fn.execute("write")
+            --     vim.cmd("RustRunnables")
+            -- end, {
+            --     buffer = true,
+            --     desc = "Rust runnables",
+            -- })
             vim.keymap.set("n", "<leader>cd", require(testFile .. ".test_rust_file"), {
                 buffer = true,
                 desc = "Test rust file",

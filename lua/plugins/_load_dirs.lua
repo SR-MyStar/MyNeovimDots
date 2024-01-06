@@ -1,11 +1,11 @@
-return {
-  "LazyVim/LazyVim",
-  { import = "plugins.UI" },
-  { import = "plugins.LSP" },
-  { import = "plugins.Coding" },
-  { import = "plugins.Editor" },
-  { import = "plugins.TreeSitter" },
-  { import = "plugins.UI.Colorscheme" },
+local env = require("_env")
 
-  { import = "plugins.Extras" },
+return {
+    "LazyVim/LazyVim",
+    { import = env.pd_ui },
+    { import = env.pd_lsp },
+    { import = env.pd_coding },
+    { import = env.pd_editor },
+    { import = env.pd_treesitter },
+    { import = env.pd_colorscheme },
 }

@@ -9,9 +9,24 @@
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.rust",
+    "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.ui.edgy",
     "lazyvim.plugins.extras.util.dot",
-    "lazyvim.plugins.extras.util.project"
+    "lazyvim.plugins.extras.util.project",
+    "plugins.extras.coding.codeium",
+    "plugins.extras.coding.nvim-surround",
+    "plugins.extras.dap.core",
+    "plugins.extras.dap.nlua",
+    "plugins.extras.editor.aerial",
+    "plugins.extras.lang.clangd",
+    "plugins.extras.lang.cmake",
+    "plugins.extras.lang.json",
+    "plugins.extras.lang.markdown",
+    "plugins.extras.lang.rust",
+    "plugins.extras.test.core",
+    "plugins.extras.ui.edgy",
+    "plugins.extras.util.dot",
+    "plugins.extras.util.project"
   ],
   "news": {
     "NEWS.md": "2123"
