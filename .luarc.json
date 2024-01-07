@@ -5,7 +5,8 @@
     ],
     "diagnostics.disable": [
         "undefined-global",
-        "unused-local"
+        "unused-local",
+        "inject-field"
     ],
     "workspace.library": [
         "/home/star/.local/share/nvim/lazy/neodev.nvim/types/nightly",

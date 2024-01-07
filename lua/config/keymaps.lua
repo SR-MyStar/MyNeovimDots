@@ -2,6 +2,3 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local del = vim.keymap.del
-
-del("n", "<leader>l", { desc = "Lazy" })
-del("n", "<leader>L", { desc = "LazyVim Changelog" })

@@ -6,7 +6,7 @@ return {
             ["<C-enter>"] = {
                 function()
                     Util.terminal({}, {
-                        cwd    = Util.root(),
+                        cwd = Util.root(),
                         border = "single",
                     })
                 end,

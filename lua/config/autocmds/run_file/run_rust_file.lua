@@ -16,7 +16,7 @@ return function()
                     if compileMode == nil then
                         return
                     end
-                    vim.fn.execute("write")
+
                     if compile == "rustc" then
                         local args = " -C codegen-units=$(nproc) "
                         if compileMode == "Debug mode" then
@@ -24,8 +24,8 @@ return function()
                         else
                             args = args .. "-C opt-level=3 " .. "-C lto "
                         end
-                        vim.cmd(
-                            "AsyncRun "
+                        vim.api.nvim_command(
+                            "w\nAsyncRun "
                                 .. asyncrun_args
                                 .. " -cwd="
                                 .. Util.root()
@@ -45,8 +45,8 @@ return function()
                         if compileMode == "Release" then
                             args = " --release "
                         end
-                        vim.cmd(
-                            "AsyncRun "
+                        vim.api.nvim_command(
+                            "w\nAsyncRun "
                                 .. asyncrun_args
                                 .. " -cwd="
                                 .. Util.root()

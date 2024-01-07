@@ -14,15 +14,21 @@ return {
             },
             TODO = { icon = " ", color = "info" },
             HACK = { icon = " ", color = "warning" },
-            WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-            PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+            WARN = {
+                icon = " ",
+                color = "warning",
+                alt = { "WARNING", "XXX" },
+            },
+            PERF = {
+                icon = " ",
+                alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" },
+            },
             NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-            TEST = { icon = " ", color = "test", alt = { "DEBUG", "TESTING", "PASSED", "FAILED" } },
+            TEST = {
+                icon = " ",
+                color = "test",
+                alt = { "DEBUG", "TESTING", "PASSED", "FAILED" },
+            },
         },
-    },
-    -- stylua: ignore
-    keys = {
-        { "<leader>st", "<cmd>TodoTelescope prompt_prefix=\\ \\ <cr>", desc = "Todo" },
-        { "<leader>sT", "<cmd>TodoTelescope prompt_prefix=\\ \\  keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
     },
 }

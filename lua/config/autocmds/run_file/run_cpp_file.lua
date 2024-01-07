@@ -49,9 +49,8 @@ return function(filetype)
                         else
                             ARGS = "-O3 "
                         end
-                        vim.fn.execute("write")
-                        vim.cmd(
-                            "AsyncRun "
+                        vim.api.nvim_command(
+                            "w\nAsyncRun "
                                 .. asyncrun_args
                                 .. " "
                                 .. compiler

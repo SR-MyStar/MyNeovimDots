@@ -52,19 +52,19 @@ local function custom_highlights(C)
         FlashLabel = { fg = C.base, bg = C.green, style = { "bold" } },
 
         TelescopePromptTitle = {
-            fg = is(C.red, C.base),
-            bg = is(C.none, C.red),
+            fg = is(C.blue, C.base),
+            bg = is(C.none, C.blue),
         },
         TelescopePromptBorder = {
-            fg = is(C.none, C.red),
-            bg = is(C.red, C.base),
+            fg = is(C.none, C.blue),
+            bg = is(C.blue, C.base),
         },
         TelescopeResultsBorder = { link = "TelescopePromptBorder" },
         TelescopeResultsTitle = { link = "TelescopePromptTitle" },
-        TelescopeSelectionCaret = { fg = C.red },
-        TelescopeMatching = { fg = is(C.none, C.red) },
+        TelescopeSelectionCaret = { fg = C.blue },
+        TelescopeMatching = { fg = is(C.none, C.blue) },
         TelescopeNormal = { bg = is(C.none, C.mantle) },
-        TelescopePromptPrefix = { fg = C.red, bg = is(C.none, C.base) },
+        TelescopePromptPrefix = { fg = C.blue, bg = is(C.none, C.base) },
         TelescopePreviewBorder = {
             fg = is(C.none, C.green),
             bg = is(C.green, C.base),
@@ -74,7 +74,7 @@ local function custom_highlights(C)
             bg = is(C.none, C.green),
         },
         TelescopeSelection = {
-            fg = is(C.red, C.text),
+            fg = is(C.blue, C.text),
             bg = is(C.none, C.base),
             style = { "bold" },
         },
