@@ -2,7 +2,7 @@ local Util = require("lazyvim.util")
 
 return {
     keys = {
-        f = {
+        e = {
             function()
                 Util.terminal({
                     "yazi",
@@ -39,7 +39,7 @@ return {
             end,
             "Yazi (root dir)",
         },
-        F = {
+        E = {
             function()
                 Util.terminal({
                     "yazi",
