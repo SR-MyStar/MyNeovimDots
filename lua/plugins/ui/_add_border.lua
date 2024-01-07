@@ -1,5 +1,5 @@
 -- Set border of some LazyVim plugins to rounded
-local BORDER = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+local BORDER = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
 
 local PLUGINS = {}
 
