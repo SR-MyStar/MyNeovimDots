@@ -1,4 +1,4 @@
 return {
-    "neo-tree",
-    "lazy",
+  "neo-tree",
+  "lazy",
 }

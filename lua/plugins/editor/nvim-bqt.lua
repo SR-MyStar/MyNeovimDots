@@ -1,6 +1,6 @@
 return {
-    "kevinhwang91/nvim-bqf",
-    lazy = true,
-    event = "VeryLazy",
-    opts = {},
+  "kevinhwang91/nvim-bqf",
+  lazy = true,
+  event = "VeryLazy",
+  opts = {},
 }

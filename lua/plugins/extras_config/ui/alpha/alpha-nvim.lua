@@ -1,9 +1,9 @@
 return {
-    "goolord/alpha-nvim",
-    event = "VimEnter",
-    opts = function()
-        local dashboard = require("alpha.themes.dashboard")
-        local logo = [[
+  "goolord/alpha-nvim",
+  event = "VimEnter",
+  opts = function()
+    local dashboard = require("alpha.themes.dashboard")
+    local logo = [[
           ██╗██╗  󰫢   󰫢   󰫢    ███████╗████████╗ █████╗ ██████╗   󰫢   󰫢   󰫢    ██╗██╗          󱝁
           ██║██║   󰫢  󰫢  󰫢  󰫢  ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗   󰫢  󰫢  󰫢  󰫢  ██║██║      󱝁
           ╚═╝╚═╝ 󰫢   󰫢   󰫢     ███████╗   ██║   ███████║██████╔╝ 󰫢   󰫢   󰫢     ╚═╝╚═╝   󱝁
@@ -12,7 +12,7 @@ return {
                 ╚═════════════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════════════╝
         ]]
 
-        dashboard.section.header.val = vim.split(logo, "\n")
+    dashboard.section.header.val = vim.split(logo, "\n")
         -- stylua: ignore
         dashboard.section.buttons.val = {
             dashboard.button("f", "󰥺 " .. " Find file",       "<cmd>Telescope find_files<CR>"                                                                     ),
@@ -26,14 +26,14 @@ return {
             dashboard.button("l", "󰒲 " .. " Lazy",            "<cmd>Lazy<CR>"                                                                                     ),
             dashboard.button("q", " " .. " Quit",            "<cmd>qa<CR>"                                                                                       ),
         }
-        for _, button in ipairs(dashboard.section.buttons.val) do
-            button.opts.hl = "AlphaButtons"
-            button.opts.hl_shortcut = "AlphaShortcut"
-        end
-        dashboard.section.header.opts.hl = "AlphaHeader"
-        dashboard.section.buttons.opts.hl = "AlphaButtons"
-        dashboard.section.footer.opts.hl = "AlphaFooter"
-        dashboard.opts.layout[1].val = 8
-        return dashboard
-    end,
+    for _, button in ipairs(dashboard.section.buttons.val) do
+      button.opts.hl = "AlphaButtons"
+      button.opts.hl_shortcut = "AlphaShortcut"
+    end
+    dashboard.section.header.opts.hl = "AlphaHeader"
+    dashboard.section.buttons.opts.hl = "AlphaButtons"
+    dashboard.section.footer.opts.hl = "AlphaFooter"
+    dashboard.opts.layout[1].val = 8
+    return dashboard
+  end,
 }

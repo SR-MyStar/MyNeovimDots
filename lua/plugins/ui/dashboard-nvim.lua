@@ -1,31 +1,31 @@
 return {
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        lazy = true,
-        event = "VeryLazy",
-        priority = 1000,
-        opts = function(_, opts)
-            opts.integrations.dashboard = true
-        end,
-    },
-    {
-        "nvimdev/dashboard-nvim",
-        event = "VimEnter",
-        opts = function(_, opts)
-            local icons = {
-                "󰥺 ",
-                "󱀺 ",
-                " ",
-                "󱀻 ",
-                "󰧭 ",
-                "󱙨 ",
-                "󰷜 ",
-                " ",
-                "󰒲 ",
-                " ",
-            }
-            local logo = [[
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = true,
+    event = "VeryLazy",
+    priority = 1000,
+    opts = function(_, opts)
+      opts.integrations.dashboard = true
+    end,
+  },
+  {
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
+    opts = function(_, opts)
+      local icons = {
+        "󰥺 ",
+        "󱀺 ",
+        " ",
+        "󱀻 ",
+        "󰧭 ",
+        "󱙨 ",
+        "󰷜 ",
+        " ",
+        "󰒲 ",
+        " ",
+      }
+      local logo = [[
               ██╗██╗  󰫢   󰫢   󰫢    ███████╗████████╗ █████╗ ██████╗   󰫢   󰫢   󰫢    ██╗██╗          󱝁
               ██║██║   󰫢  󰫢  󰫢  󰫢  ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗   󰫢  󰫢  󰫢  󰫢  ██║██║      󱝁    
               ╚═╝╚═╝ 󰫢   󰫢   󰫢     ███████╗   ██║   ███████║██████╔╝ 󰫢   󰫢   󰫢     ╚═╝╚═╝   󱝁       
@@ -33,17 +33,17 @@ return {
                     ██████████████╗███████║   ██║   ██║  ██║██║  ██║███████████████╗                
                     ╚═════════════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════════════╝                
         ]]
-            logo = string.rep("\n", 8) .. logo .. "\n\n"
+      logo = string.rep("\n", 8) .. logo .. "\n\n"
 
-            opts.config.header = vim.split(logo, "\n")
-            opts.config.center[6].action = function()
-                vim.api.nvim_set_current_dir(vim.fn.stdpath("config"))
-                require("telescope.builtin").find_files()
-            end
+      opts.config.header = vim.split(logo, "\n")
+      opts.config.center[6].action = function()
+        vim.api.nvim_set_current_dir(vim.fn.stdpath("config"))
+        require("telescope.builtin").find_files()
+      end
 
-            for index, value in pairs(opts.config.center) do
-                value.icon = icons[index]
-            end
-        end,
-    },
+      for index, value in pairs(opts.config.center) do
+        value.icon = icons[index]
+      end
+    end,
+  },
 }

@@ -1,4 +1,4 @@
 return {
-    "encoding",
-    icon = "",
+  "encoding",
+  icon = "",
 }

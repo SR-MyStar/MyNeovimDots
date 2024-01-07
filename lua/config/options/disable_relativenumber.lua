@@ -1,3 +1,3 @@
 return function()
-    vim.opt.relativenumber = false
+  vim.opt.relativenumber = false
 end

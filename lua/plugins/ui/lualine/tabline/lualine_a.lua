@@ -1,5 +1,5 @@
 local tabline = require("_env").dm_Lualine_Tabline
 
 return {
-    require(tabline .. ".Lualine_a.buffers"),
+  require(tabline .. ".Lualine_a.buffers"),
 }

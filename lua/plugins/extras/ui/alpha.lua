@@ -1,5 +1,5 @@
 local ui = require("_env").ed.ui
 
 return {
-    { import = ui .. ".alpha" },
+  { import = ui .. ".alpha" },
 }

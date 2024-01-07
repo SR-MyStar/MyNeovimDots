@@ -1,3 +1,3 @@
 return {
-    "skywind3000/asyncrun.vim",
+  "skywind3000/asyncrun.vim",
 }

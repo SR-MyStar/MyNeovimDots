@@ -8,22 +8,22 @@
 -- │ f  - function          │
 -- └────────────────────────┘
 local env = {
-    f_split_filename = function(file)
-        return {
-            name = file:match("(.+)%."),
-            extension = file:match(".+%.(%w+)$"),
-        }
-    end,
-    d_config = "config",
-    d_global_keymaps = "config.keymaps",
-    d_autocmds = "config.autocmds",
-    d_options = "config.options",
-    d_plugins = "plugins",
-    d_extras = "plugins.extras_config",
-    ed = {},
-    fm_ICONS = "ICONS",
+  f_split_filename = function(file)
+    return {
+      name = file:match("(.+)%."),
+      extension = file:match(".+%.(%w+)$"),
+    }
+  end,
+  d_config = "config",
+  d_global_keymaps = "config.keymaps",
+  d_autocmds = "config.autocmds",
+  d_options = "config.options",
+  d_plugins = "plugins",
+  d_extras = "plugins.extras_config",
+  ed = {},
+  fm_ICONS = "ICONS",
 
-    sm_asyncrun_args = "-mode=term -pos=bottom -rows=20",
+  sm_asyncrun_args = "-mode=term -pos=bottom -rows=20",
 }
 
 env.pd_coding = env.d_plugins .. ".coding"

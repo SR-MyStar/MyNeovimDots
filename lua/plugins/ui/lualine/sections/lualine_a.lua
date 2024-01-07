@@ -1,5 +1,5 @@
 local sections = require("_env").dm_Lualine_Sections
 
 return {
-    require(sections .. ".Lualine_a.mode"),
+  require(sections .. ".Lualine_a.mode"),
 }
